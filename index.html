@@ -100,7 +100,7 @@
 <body>
 
 <div id="header">
-	<h2 class="title"> <a style="text-decoration: none;" href="https://github.com/esperanc/">JS/P5 Editor</a></h2>
+	<h2 class="title"> <a style="text-decoration: none;" href="https://github.com/esperanc/jside">JS/P5 Editor</a></h2>
 </div>
 
 <div id="topmenu">
@@ -112,7 +112,7 @@
  	<label class="button" for="loadfile">Upload</label>
     <input type="file" id="loadfile" name="files[]" style="visibility:hidden;display:none;" onchange="loadit(this)"></input>
 	<label class="button" onclick="saveit()">Download as</label>
-    <input id="savefilename" type="text" value="program.js"/>
+    <input id="savefilename" type="text" value="sketch.js"/>
 	</div>
 </div>
 
@@ -216,7 +216,7 @@
         editor.setValue ("");
         localStorage["jsEditor"] = "";
         changeCount = 0; 
-        document.getElementById("savefilename").value = "program.js";
+        document.getElementById("savefilename").value = "sketch.js";
     }
 
     // Action for the button "Run": runs the program
