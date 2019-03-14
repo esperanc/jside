@@ -1,0 +1,32 @@
+<script id="redirect_console">
+let _old_console_log = window.console.log;
+let _console_text = document.createElement("textarea")
+_console_text.id="console";
+_console_text.autocomplete = "off";
+
+function _replace_console() {
+	window.console.log = function (...args) {
+		for (let a of args) {
+			_console_text.value += a;
+		}
+	}
+}
+_replace_console();
+
+function _restore_console() {
+	window.console.log = _old_console_log;
+}
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js"></script>
+<script src="js/codesetup.js"></script>
+<link rel="stylesheet" type="text/css" href="style/runframe.css">
+<script id="main" type="text/javascript">
+PROGRAM
+</script>
+<body>
+<script>
+	let _body = document.getElementsByTagName("body")[0];
+	_body.appendChild(_console_text);
+</script>	
+</body>
